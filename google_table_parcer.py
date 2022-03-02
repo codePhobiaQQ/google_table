@@ -23,13 +23,14 @@ def get_service_sacc():
 
 
 # service = get_service_simple()
-service = get_service_sacc() 
+service = get_service_sacc()
 sheet = service.spreadsheets()
 
 # https://docs.google.com/spreadsheets/d/xxx/edit#gid=0
 sheet_id = config.SHEET_ID
 
 # https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/get
-resp = sheet.values().get(spreadsheetId=sheet_id, range="Лист1!A1:L1000").execute()
+# resp = sheet.values().get(spreadsheetId=sheet_id, range="Лист1!A1:L1000").execute()
 
-print(resp)
+def start_parce():
+    return sheet.values().get(spreadsheetId=sheet_id, range="Отчет!A1:L1000").execute()
